@@ -1,0 +1,1 @@
+This project does not use tailwind css, as it is a create-react-app project. Instead it uses module.css styling.
