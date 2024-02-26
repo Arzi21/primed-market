@@ -1,0 +1,26 @@
+/*
+
+/* overall theme values
+
+*/
+
+:root {
+    /* colours */
+    --main_bg: #20242e;
+    --main_font: #CCC5A6;
+    --dark_font: var(--main_bg);
+
+    /* layout/structure */
+    --outer_wrapper_margin: 48px;
+
+    /* font/typography */
+    font-size: 16px;
+    --title_lg: 3em;
+    --title_md: 2em;
+    --title_sm: 1em;
+
+}
+
+h1 {
+    margin: 0;
+}
