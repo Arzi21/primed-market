@@ -2,6 +2,6 @@
 
 export interface ItemSetInterface {
     setName: string,
-    setItems: string[],
+    setItemUrls: string[],
     setDescription: string
 }
