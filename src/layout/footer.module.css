@@ -1,0 +1,14 @@
+/*
+
+/*
+
+*/
+
+.footer {
+    text-align: center;
+    font-size: var(--prg_sm);
+}
+
+.footer > p {
+    color: var(--main_font);
+}

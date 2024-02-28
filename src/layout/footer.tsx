@@ -1,11 +1,11 @@
-
+import styles from "./footer.module.css";
 
 export const Footer = () => {
 
 
     return (
-        <footer>
-            <p> Testing footer </p>
+        <footer className={styles.footer}>
+            <p> LoFi HTML  </p>
         </footer>
     );
 }
