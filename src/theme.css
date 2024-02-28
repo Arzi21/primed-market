@@ -17,8 +17,10 @@
     font-size: 16px;
     --title_lg: 3em;
     --title_md: 2em;
-    --title_sm: 1em;
-
+    --title_sm: 1.5em;
+    --prg_lg: 1.75em;
+    --prg_md: 1.5em;
+    --prg_sm: 1.25em;
 }
 
 h1, h2, h3, p {
