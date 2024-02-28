@@ -11,7 +11,7 @@ import { Main } from './layout/main';
 const route = createBrowserRouter([
   { path: '/', element: <RootLayout/>, children: [
     { path: '/', element: <Main/>},
-    { path: '/item', element: <ItemSetHighlight/>}
+    { path: '/set/*', element: <ItemSetHighlight/>}
   ]}
 ]);
 

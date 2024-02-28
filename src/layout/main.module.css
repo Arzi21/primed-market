@@ -22,3 +22,8 @@ main > p {
     margin: 0;
     line-height: 1em;
 }
+
+main > a {
+    color: var(--main_font);
+    text-decoration: none;
+}
