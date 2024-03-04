@@ -7,11 +7,13 @@ import './theme.css';
 import { RootLayout } from './routes/rootLayout';
 import { ItemSetHighlight } from './layout/itemSetHighlight';
 import { Main } from './layout/main';
+import { NewItemSet } from './layout/newItemSet';
 
 const route = createBrowserRouter([
   { path: '/', element: <RootLayout/>, children: [
     { path: '/', element: <Main/>},
-    { path: '/set/*', element: <ItemSetHighlight/>}
+    { path: '/set/*', element: <ItemSetHighlight/>},
+    { path: '/new_Set', element: <NewItemSet/>}
   ]}
 ]);
 

@@ -1,0 +1,31 @@
+/*
+
+/*
+
+*/
+
+.outerWrapper {
+    margin: var(--outer_wrapper_margin);
+
+    --interactable_spacing: 8px;
+}
+
+.outerWrapper label, .outerWrapper input, .outerWrapper button {
+    display: block;
+    margin: var(--interactable_spacing) 0;
+
+}
+
+.outerWrapper h2 {
+    font-size: var(--title_md);
+}
+
+.outerWrapper label {
+    color: var(--main_font);
+    font-size: var(--prg_lg);
+    margin: 16px 0px;
+}
+
+.outerWrapper input {
+    font-size: var(--prg_sm);
+}
