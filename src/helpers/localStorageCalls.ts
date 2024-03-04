@@ -1,20 +1,8 @@
-// import { useState } from "react";
 import { ItemSetInterface } from "../interfaces/itemSetInterface";
 
 //this is where we'll communicate with localhost for user added sets
 
-export function InitialiseTestValue() {
-    //temporary measure
 
-    const exampleSet:ItemSetInterface[] = [{setName: "Survival mods", setNameUrl: "Survival_mods", setItemUrls: ["redirection", "vitality", "vigor", "steel_fiber"], setDescription: "This is a starter itemset, it only exsits as an example for how to use this webapp."}];
-    // const [itemSet, setItemSet] = useState<ItemSetInterface[]>(exampleSet);
-
-    localStorage.setItem("ItemSet", JSON.stringify(exampleSet));
-
-    const itemSet = exampleSet
-
-    return {itemSet}
-}
 
 export function PostLocalStorage(key:string, value:any) {
     const fetchedData = JSON.stringify(value)
@@ -22,10 +10,9 @@ export function PostLocalStorage(key:string, value:any) {
 }
 
 export function ReadLocalStorage(key:string) {
-    
-    const storageData = localStorage.getItem(key);
-
-    if (storageData) {
+    if (doesKeyExist(key)) {
+        const storageData:string = localStorage.getItem(key)!; 
+        //added ! here since we're checking doesKeyExist
         const formattedData:ItemSetInterface[] = JSON.parse(storageData);
         return formattedData;
     } else {
@@ -33,8 +20,10 @@ export function ReadLocalStorage(key:string) {
     }
 }
 
-export function DeleteLocalStorage(key:string) {
-    
+export function DeleteFromLocalStorage(key:string) {
+    if (doesKeyExist(key)) {
+        localStorage.removeItem(key);
+    }
 }
 
 export function DropLocalStorage() {
@@ -47,5 +36,25 @@ export function DropLocalStorage() {
         localStorage.clear();
     } else {
         console.log("Dropping the entire table is not currently permitted");
+    }
+}
+
+export function InitialiseTestValue() {
+    //temporary measure
+    const exampleSet:ItemSetInterface[] = [{setName: "Survival mods", setNameUrl: "Survival_mods", setItemUrls: ["redirection", "vitality", "vigor", "steel_fiber"], setDescription: "This is a starter itemset, it only exsits as an example for how to use this webapp."}];
+    localStorage.setItem("ItemSet", JSON.stringify(exampleSet));
+    const itemSet = exampleSet
+    return {itemSet}
+}
+
+
+
+function doesKeyExist(key:string) {
+    const storageData = localStorage.getItem(key);
+    if (storageData) {
+        return true
+    } else {
+        console.warn("Local storage error. Key not found for: " + key);
+        return false
     }
 }
