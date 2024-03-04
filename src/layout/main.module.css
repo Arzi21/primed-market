@@ -18,12 +18,12 @@
     border-bottom: 1px solid var(--main_font);
 }
 
-p {
+.main p {
     margin: 0;
     line-height: 1em;
 }
 
-a {
+.main a {
     color: var(--main_font);
     text-decoration: none;
 }
