@@ -6,7 +6,7 @@ import styles from "./main.module.css";
 
 export const Main = () => {
 
-    const {itemSet} = InitialiseTestValue();
+    const itemSet = InitialiseTestValue();
 
     return(
         <section className={styles.main}>
