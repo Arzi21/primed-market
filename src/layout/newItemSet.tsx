@@ -13,7 +13,11 @@ export const NewItemSet = () => {
         setNameUrl: "undefined",
         setItemUrls: ["undefined"],
         setDescription: "undefined"
-    })
+    });
+
+    function handleInputUpdates() {
+
+    }
 
     function handleSubmit(formData:any) {
         formData.preventDefault();
@@ -32,17 +36,28 @@ export const NewItemSet = () => {
             <h2> Create New Item Set </h2>
             <label>
                 Set name
-                <input name="setName"/>
+                <input 
+                    name="setName" 
+                    value={itemSet.setName} 
+                    onChange={handleInputUpdates}
+                />
             </label>
+
             <label>
                 Set items
                 {Array(inputQuantity).fill(0).map((_, index) => (
-                    <input key={"itemInputNr" + index} name={"setItem"+(index+1)}/>
+                    <input 
+                        key={"itemInputNr" + index} 
+                        name={"setItem"+(index+1)} 
+                        value={itemSet.setItemUrls}
+                        onChange={handleInputUpdates}
+                    />
                 ))}
             </label>
+            
             <button type="button" onClick={()=>{setInputQuantity(prev => prev + 1)}}> Add Slot </button>
             <button type="submit"> Save Set </button>
         </form>
         </div>
-    )
+    );
 }
