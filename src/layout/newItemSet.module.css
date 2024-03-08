@@ -10,7 +10,7 @@
     --interactable_spacing: 8px;
 }
 
-.outerWrapper label, .outerWrapper input, .outerWrapper button {
+.outerWrapper label, .outerWrapper input, .outerWrapper button, .outerWrapper textarea {
     display: block;
     margin: var(--interactable_spacing) 0;
 
@@ -26,6 +26,7 @@
     margin: 16px 0px;
 }
 
-.outerWrapper input {
+.outerWrapper input, .outerWrapper textarea {
     font-size: var(--prg_sm);
+    font-family: var(--font-family);
 }

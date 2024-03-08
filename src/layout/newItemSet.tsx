@@ -15,8 +15,11 @@ export const NewItemSet = () => {
         setDescription: "undefined"
     });
 
-    function handleInputUpdates() {
-
+    function handleInputUpdates(event:any) {
+        setItemSet({
+            ...itemSet,
+            [event.target.name]: event.target.value
+        });
     }
 
     function handleSubmit(formData:any) {
@@ -37,9 +40,11 @@ export const NewItemSet = () => {
             <label>
                 Set name
                 <input 
+                    type="text"
                     name="setName" 
                     value={itemSet.setName} 
                     onChange={handleInputUpdates}
+                    defaultValue="test"
                 />
             </label>
 
@@ -47,12 +52,23 @@ export const NewItemSet = () => {
                 Set items
                 {Array(inputQuantity).fill(0).map((_, index) => (
                     <input 
+                        type="text"
                         key={"itemInputNr" + index} 
                         name={"setItem"+(index+1)} 
                         value={itemSet.setItemUrls}
                         onChange={handleInputUpdates}
                     />
                 ))}
+            </label>
+
+            <label>
+                Description
+                <textarea 
+                    name="setDescription" 
+                    value={itemSet.setDescription} 
+                    onChange={handleInputUpdates}
+                    defaultValue="test"
+                />
             </label>
             
             <button type="button" onClick={()=>{setInputQuantity(prev => prev + 1)}}> Add Slot </button>
