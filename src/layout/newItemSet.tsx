@@ -25,8 +25,9 @@ export const NewItemSet = () => {
     function handleSubmit(formData:any) {
         formData.preventDefault();
 
+        console.log('test');
 
-        PostLocalStorage("ItemSet", itemSet);
+        // PostLocalStorage("ItemSet", itemSet);
 
         // currently this doesn't work.
         //need to get the values from the form, not the keys.

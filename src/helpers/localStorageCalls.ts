@@ -7,15 +7,17 @@ export function PostLocalStorage(key:string, value:any) {
     let prevValue:any = []
     if (doesKeyExist(key)) {
         prevValue = localStorage.getItem(key);
+        prevValue = JSON.parse(prevValue);
     }
-    const localStorageUpdate = JSON.stringify({data: [prevValue.data, value]});
+    const updatedLocalStorageData = {data: [...prevValue.data, value]}
+
+    const localStorageUpdate = JSON.stringify(updatedLocalStorageData);
     localStorage.setItem(key, localStorageUpdate);
 }
 
 export function ReadLocalStorage(key:string):ItemSetInterface[]|any {
     if (doesKeyExist(key)) {
-        const storageData:string = localStorage.getItem(key)!; 
-        //added ! here since we're checking doesKeyExist
+        const storageData:string = localStorage.getItem(key)!;//"!" here since we vetted in doesKeyExist
         const formattedData = JSON.parse(storageData);
         return formattedData.data;
     } else {
@@ -44,7 +46,13 @@ export function DropLocalStorage() {
 
 export function InitialiseTestValue() {
     //temporary measure
-    const exampleSet:ItemSetInterface = {setName: "Survival mods", setNameUrl: "Survival_mods", setItemUrls: ["redirection", "vitality", "vigor", "steel_fiber"], setDescription: "This is a starter itemset, it only exsits as an example for how to use this webapp."};
+    const exampleSet:ItemSetInterface = {
+        setName: "Survival mods", 
+        setNameUrl: "Survival_mods", 
+        setItemUrls: ["redirection", "vitality", "vigor", "steel_fiber"], 
+        setDescription: "This is a starter itemset, it only exsits as an example for how to use this webapp."
+    };
+    
     localStorage.setItem("ItemSet", JSON.stringify({data: [exampleSet]}));
     const itemSet = [exampleSet];
     return itemSet
