@@ -15,23 +15,55 @@ export const NewItemSet = () => {
         setDescription: "undefined"
     });
 
+    //TEST
+    const [tempState, setState] = useState<string[]>();
+
+
+
     function handleInputUpdates(event:any) {
         setItemSet({
             ...itemSet,
             [event.target.name]: event.target.value
         });
     }
+    let initalArray = Array(inputQuantity).fill("test");
+    let newArr:string[] = [];
+
+    function handleInputArrayUpdates(event:any, index:number) {
+        console.log(event.target.value);
+        // setState([...tempState, ])
+
+        newArr = initalArray.map((value, i) => {
+            if (i === index) {
+                return event.target.value;
+            } else {
+                // return value;
+                return newArr[i];
+            }
+        });
+
+        //stopping here. This still doesn't fully work, 
+        //the issue we've got is that our multiple inputs need to become an array
+        //haven't done that in the submit phase, as at that point its already mapped to objects,
+        //try for next time: hard code the array index into the input field, 
+        //so that it directly mutates the array variable. use that variable in the submit phase.
+
+        // setItemSet({
+        //     setName: "undefined",
+        //     setNameUrl: "undefined",
+        //     setItemUrls: ["undefined"],
+        //     setDescription: "undefined"
+        // })
+    }
 
     function handleSubmit(formData:any) {
         formData.preventDefault();
 
         console.log('test');
+        console.log(itemSet);
+        console.log(formData);
 
-        // PostLocalStorage("ItemSet", itemSet);
-
-        // currently this doesn't work.
-        //need to get the values from the form, not the keys.
-        //might be easier to just redo the entire form.
+        // PostLocalStorage("itemSet", itemSet);
     }
 
     return (
@@ -56,8 +88,8 @@ export const NewItemSet = () => {
                         type="text"
                         key={"itemInputNr" + index} 
                         name={"setItem"+(index+1)} 
-                        value={itemSet.setItemUrls}
-                        onChange={handleInputUpdates}
+                        value={itemSet.setItemUrls[index]}
+                        onChange={(event) => handleInputArrayUpdates(event, index)}
                     />
                 ))}
             </label>

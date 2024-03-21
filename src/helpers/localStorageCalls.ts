@@ -53,7 +53,7 @@ export function InitialiseTestValue() {
         setDescription: "This is a starter itemset, it only exsits as an example for how to use this webapp."
     };
     
-    localStorage.setItem("ItemSet", JSON.stringify({data: [exampleSet]}));
+    localStorage.setItem("itemSet", JSON.stringify({data: [exampleSet]}));
     const itemSet = [exampleSet];
     return itemSet
 }

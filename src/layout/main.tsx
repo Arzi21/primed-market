@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ReadLocalStorage } from "../helpers/localStorageCalls";
+import { ReadLocalStorage, InitialiseTestValue } from "../helpers/localStorageCalls";
 
 import { ItemSetCard } from "../components/itemSetCard";
 import styles from "./main.module.css";
