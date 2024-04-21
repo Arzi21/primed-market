@@ -48,6 +48,8 @@ export const NewItemSet = () => {
         //try for next time: hard code the array index into the input field, 
         //so that it directly mutates the array variable. use that variable in the submit phase.
 
+        //update, try tghis: https://www.youtube.com/watch?v=CT-72lTXdPg or https://www.youtube.com/watch?v=cc_xmawJ8Kg 
+
         // setItemSet({
         //     setName: "undefined",
         //     setNameUrl: "undefined",
