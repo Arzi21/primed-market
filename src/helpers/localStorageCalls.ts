@@ -26,6 +26,8 @@ export function ReadLocalStorage(key:string):ItemSetInterface[]|any {
 }
 
 export function DeleteFromLocalStorage(key:string) {
+    return console.warn("deletion currently not set up. Cannot delete key: " + key);
+
     if (doesKeyExist(key)) {
         localStorage.removeItem(key);
     }
