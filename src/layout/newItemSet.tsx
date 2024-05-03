@@ -41,15 +41,13 @@ export const NewItemSet = () => {
     function handleSubmit(formData:any) {
         formData.preventDefault();
 
-        console.log('test');
-        console.log(itemSet);
-        console.log(formData);
+        //form validation needed
 
         PostLocalStorage("itemSet", itemSet);
         setItemSet(emptyItemSet);
     }
 
-    function increment() {
+    function addInputField() {
         let mutableItemUrls = itemSet.setItemUrls
         mutableItemUrls.push("");
         setItemSet(prev => ({...prev, setItemUrls: mutableItemUrls}))
@@ -94,7 +92,7 @@ export const NewItemSet = () => {
                 />
             </label>
             
-            <button type="button" onClick={()=>increment()}> Add Slot </button>
+            <button type="button" onClick={()=>addInputField()}> Add Slot </button>
             <button type="submit"> Save Set </button>
         </form>
         </div>
