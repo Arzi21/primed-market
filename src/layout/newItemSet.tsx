@@ -7,12 +7,14 @@ import styles from "./newItemSet.module.css";
 
 export const NewItemSet = () => {
 
-    const [itemSet, setItemSet] = useState({
-        setName: "undefined",
-        setNameUrl: "undefined",
-        setItemUrls: Array(1).fill("undefined"),
-        setDescription: "undefined"
-    });
+    const emptyItemSet = {
+        setName: "",
+        setNameUrl: "",
+        setItemUrls: Array(1).fill(""),
+        setDescription: ""
+    }
+
+    const [itemSet, setItemSet] = useState<ItemSetInterface>(emptyItemSet);
 
 
 
@@ -43,7 +45,8 @@ export const NewItemSet = () => {
         console.log(itemSet);
         console.log(formData);
 
-        // PostLocalStorage("itemSet", itemSet);
+        PostLocalStorage("itemSet", itemSet);
+        setItemSet(emptyItemSet);
     }
 
     function increment() {
@@ -63,7 +66,7 @@ export const NewItemSet = () => {
                     name="setName" 
                     value={itemSet.setName} 
                     onChange={handleInputUpdates}
-                    defaultValue="test"
+                    placeholder="test"
                 />
             </label>
 
@@ -76,6 +79,7 @@ export const NewItemSet = () => {
                         name={"setItem"+(index+1)} 
                         value={itemSet.setItemUrls[index]}
                         onChange={(event) => handleInputArrayUpdates(event.target.value, index)}
+                        placeholder="test"
                     />
                 ))}
             </label>
@@ -86,7 +90,7 @@ export const NewItemSet = () => {
                     name="setDescription" 
                     value={itemSet.setDescription} 
                     onChange={handleInputUpdates}
-                    defaultValue="test"
+                    placeholder="test"
                 />
             </label>
             
