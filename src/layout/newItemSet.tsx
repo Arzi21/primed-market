@@ -7,16 +7,12 @@ import styles from "./newItemSet.module.css";
 
 export const NewItemSet = () => {
 
-    const [inputQuantity, setInputQuantity] = useState(1);
     const [itemSet, setItemSet] = useState({
         setName: "undefined",
         setNameUrl: "undefined",
-        setItemUrls: ["undefined"],
+        setItemUrls: Array(1).fill("undefined"),
         setDescription: "undefined"
     });
-
-    //TEST
-    const [tempState, setState] = useState<string[]>();
 
 
 
@@ -26,36 +22,18 @@ export const NewItemSet = () => {
             [event.target.name]: event.target.value
         });
     }
-    let initalArray = Array(inputQuantity).fill("test");
-    let newArr:string[] = [];
 
-    function handleInputArrayUpdates(event:any, index:number) {
-        console.log(event.target.value);
-        // setState([...tempState, ])
-
-        newArr = initalArray.map((value, i) => {
+    function handleInputArrayUpdates(inputValue:string, index:number) {
+        let mutableItemUrls = itemSet.setItemUrls;
+        mutableItemUrls = mutableItemUrls.map((_, i) => {
             if (i === index) {
-                return event.target.value;
+                return inputValue;
             } else {
-                // return value;
-                return newArr[i];
+                return mutableItemUrls[i];
             }
         });
 
-        //stopping here. This still doesn't fully work, 
-        //the issue we've got is that our multiple inputs need to become an array
-        //haven't done that in the submit phase, as at that point its already mapped to objects,
-        //try for next time: hard code the array index into the input field, 
-        //so that it directly mutates the array variable. use that variable in the submit phase.
-
-        //update, try tghis: https://www.youtube.com/watch?v=CT-72lTXdPg or https://www.youtube.com/watch?v=cc_xmawJ8Kg 
-
-        // setItemSet({
-        //     setName: "undefined",
-        //     setNameUrl: "undefined",
-        //     setItemUrls: ["undefined"],
-        //     setDescription: "undefined"
-        // })
+        setItemSet(prev => ({...prev, setItemUrls:mutableItemUrls}));
     }
 
     function handleSubmit(formData:any) {
@@ -66,6 +44,12 @@ export const NewItemSet = () => {
         console.log(formData);
 
         // PostLocalStorage("itemSet", itemSet);
+    }
+
+    function increment() {
+        let mutableItemUrls = itemSet.setItemUrls
+        mutableItemUrls.push("");
+        setItemSet(prev => ({...prev, setItemUrls: mutableItemUrls}))
     }
 
     return (
@@ -85,13 +69,13 @@ export const NewItemSet = () => {
 
             <label>
                 Set items
-                {Array(inputQuantity).fill(0).map((_, index) => (
+                {itemSet.setItemUrls.map((_, index) => (
                     <input 
                         type="text"
                         key={"itemInputNr" + index} 
                         name={"setItem"+(index+1)} 
                         value={itemSet.setItemUrls[index]}
-                        onChange={(event) => handleInputArrayUpdates(event, index)}
+                        onChange={(event) => handleInputArrayUpdates(event.target.value, index)}
                     />
                 ))}
             </label>
@@ -106,7 +90,7 @@ export const NewItemSet = () => {
                 />
             </label>
             
-            <button type="button" onClick={()=>{setInputQuantity(prev => prev + 1)}}> Add Slot </button>
+            <button type="button" onClick={()=>increment()}> Add Slot </button>
             <button type="submit"> Save Set </button>
         </form>
         </div>
