@@ -26,9 +26,7 @@ export const Main = () => {
             </div>
             <article>
                 {itemSet ? itemSet.map((itemSetValues:ItemSetInterface) => (
-                    <Link to={"/set/" + itemSetValues.setNameUrl} key={itemSetValues.setNameUrl}>
-                        <ItemSetCard itemSet={itemSetValues} displayDelete={isDeletable}/>
-                    </Link>
+                        <ItemSetCard itemSet={itemSetValues} displayDelete={isDeletable} key={itemSetValues.setNameUrl}/>
                 )) : <p> No item sets added yet. <Link to={"/new_Set/"}> Create your first set!</Link></p>}
             </article>
         </section>
