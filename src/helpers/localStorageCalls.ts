@@ -3,10 +3,10 @@ import { ItemSetInterface } from "../interfaces/itemSetInterface";
 //this is where we'll communicate with localhost for user added sets
 
 
-export function PostLocalStorage(key:string, value:ItemSetInterface):void {
+export function UpdateLocalStorage(key:string, value:ItemSetInterface):void {
     const prevValue = ReadLocalStorageSection(key);
     const updatedLocalStorageArray = [...prevValue, value];
-    overrideLocalstorageItemset(updatedLocalStorageArray);
+    overrideLocalstorageModList(updatedLocalStorageArray);
 }
 
 export function ReadLocalStorageSection(key:string):ItemSetInterface[]|any {
@@ -22,7 +22,7 @@ export function ReadLocalStorageSection(key:string):ItemSetInterface[]|any {
 export function DeleteFromModList(modCard:ItemSetInterface):void {
     const dirtyLocalstorage = ReadLocalStorageSection("itemSet");
     let cleanLocalstorage = dirtyLocalstorage.filter((obj:ItemSetInterface) => obj.setName !== modCard.setName);
-    overrideLocalstorageItemset(cleanLocalstorage);
+    overrideLocalstorageModList(cleanLocalstorage);
 }
 
 export function DropLocalStorage():void {
@@ -44,16 +44,16 @@ export function InitialiseTestValue():ItemSetInterface[] {
         setDescription: "This is a starter itemset, it only exsits as an example for how to use this webapp."
     };
     
-    overrideLocalstorageItemset([exampleSet]);
+    overrideLocalstorageModList([exampleSet]);
     return [exampleSet];
 }
 
-
-
-function overrideLocalstorageItemset(newPackage:ItemSetInterface[]):void {
+export function overrideLocalstorageModList(newPackage:ItemSetInterface[]):void {
     const updatePackage = JSON.stringify({data: newPackage});
     localStorage.setItem("itemSet", updatePackage);
 }
+
+
 
 function doesKeyExist(key:string):boolean {
     const storageData = localStorage.getItem(key);
