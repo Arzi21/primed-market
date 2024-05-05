@@ -21,12 +21,12 @@ export const Main = () => {
                 <button></button>
                 <label> 
                     &#128465;
-                    <input type="checkbox"></input>
+                    <input type="checkbox" onClick={()=> (setIsDeletable(!isDeletable))}></input>
                 </label>
             </div>
-            <article>
-                {itemSet ? itemSet.map((itemSetValues:ItemSetInterface) => (
-                        <ItemSetCard itemSet={itemSetValues} displayDelete={isDeletable} key={itemSetValues.setNameUrl}/>
+            <article className={styles.modListGrid}>
+                {itemSet ? itemSet.map((itemSetValues:ItemSetInterface, index:number) => (
+                        <ItemSetCard itemSet={itemSetValues} displayDelete={isDeletable} key={index + itemSetValues.setNameUrl}/>
                 )) : <p> No item sets added yet. <Link to={"/new_Set/"}> Create your first set!</Link></p>}
             </article>
         </section>
