@@ -5,7 +5,7 @@ import { ItemSetInterface } from "../interfaces/itemSetInterface";
 
 export function PostLocalStorage(key:string, value:ItemSetInterface):void {
     const prevValue = ReadLocalStorageSection(key);
-    const updatedLocalStorageArray = [...prevValue.data, value]
+    const updatedLocalStorageArray = [...prevValue, value];
     overrideLocalstorageItemset(updatedLocalStorageArray);
 }
 

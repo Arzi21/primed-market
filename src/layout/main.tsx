@@ -11,7 +11,7 @@ export const Main = () => {
     const [isDeletable, setIsDeletable] = useState(false);
     const [itemSet, setItemSet] = useState(ReadLocalStorageSection("itemSet"))
 
-    // const itemSet = ReadLocalStorage("itemSet");
+    // const itemSet = ReadLocalStorageSection("itemSet");
 
     //todo: Add "setdeletion" function that refreshes the dom when localhost is deleted. usestate.
 
