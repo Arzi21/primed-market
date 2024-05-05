@@ -25,12 +25,13 @@ export function ReadLocalStorage(key:string):ItemSetInterface[]|any {
     }
 }
 
-export function DeleteFromLocalStorage(key:string) {
-    return console.warn("deletion currently not set up. Cannot delete key: " + key);
+export function DeleteFromLocalStorage(modCard:ItemSetInterface) {
+    // console.warn("deletion currently not set up. Cannot delete key: " + modCard.setName);
 
-    if (doesKeyExist(key)) {
-        localStorage.removeItem(key);
-    }
+    const dirtyLocalstorage = ReadLocalStorage("itemSet");
+    let cleanLocalstorage = dirtyLocalstorage.filter((obj:ItemSetInterface) => obj.setName !== modCard.setName);
+    const localStoragePackage = JSON.stringify({data: [...cleanLocalstorage]});
+    localStorage.setItem("itemSet", localStoragePackage);
 }
 
 export function DropLocalStorage() {
