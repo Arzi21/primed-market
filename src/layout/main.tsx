@@ -12,6 +12,7 @@ export const Main = () => {
 
     const itemSet = ReadLocalStorage("itemSet");
 
+    //todo: Add "setdeletion" function that refreshes the dom when localhost is deleted. usestate.
 
     return(
         <section className={styles.main}>
