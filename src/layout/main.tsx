@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-import { ReadLocalStorage, InitialiseTestValue } from "../helpers/localStorageCalls";
+import { ReadLocalStorageSection, InitialiseTestValue } from "../helpers/localStorageCalls";
 import { ItemSetCard } from "../components/itemSetCard";
 import { ItemSetInterface } from "../interfaces/itemSetInterface";
 import styles from "./main.module.css";
@@ -9,8 +9,9 @@ import styles from "./main.module.css";
 export const Main = () => {
 
     const [isDeletable, setIsDeletable] = useState(false);
+    const [itemSet, setItemSet] = useState(ReadLocalStorageSection("itemSet"))
 
-    const itemSet = ReadLocalStorage("itemSet");
+    // const itemSet = ReadLocalStorage("itemSet");
 
     //todo: Add "setdeletion" function that refreshes the dom when localhost is deleted. usestate.
 

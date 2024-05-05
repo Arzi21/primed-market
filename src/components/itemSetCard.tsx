@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ItemSetInterface } from "../interfaces/itemSetInterface"
-import { DeleteFromLocalStorage } from "../helpers/localStorageCalls";
+import { DeleteFromModList } from "../helpers/localStorageCalls";
 import styles from "./itemSetCard.module.css";
 
 export const ItemSetCard = (props: {itemSet:ItemSetInterface, displayDelete:boolean}) => {
@@ -9,7 +9,7 @@ export const ItemSetCard = (props: {itemSet:ItemSetInterface, displayDelete:bool
 
     return (
     <div className={styles.wrapperCard}>
-        {displayDelete && <button className={styles.deletionButton} onClick={()=> {DeleteFromLocalStorage(itemSet)}}> Delete </button>}
+        {displayDelete && <button className={styles.deletionButton} onClick={()=> {DeleteFromModList(itemSet)}}> Delete </button>}
         <Link to={"/set/" + itemSet.setNameUrl} className={styles.linkCard}>
             <h3> {itemSet.setName} </h3>
             <p> {itemSet.setItemUrls.length} </p>

@@ -4,12 +4,12 @@ import { ItemSetInterface } from "../interfaces/itemSetInterface";
 
 
 export function PostLocalStorage(key:string, value:ItemSetInterface):void {
-    const prevValue = ReadLocalStorage(key);
+    const prevValue = ReadLocalStorageSection(key);
     const updatedLocalStorageArray = [...prevValue.data, value]
     overrideLocalstorageItemset(updatedLocalStorageArray);
 }
 
-export function ReadLocalStorage(key:string):ItemSetInterface[]|any {
+export function ReadLocalStorageSection(key:string):ItemSetInterface[]|any {
     if (doesKeyExist(key)) {
         const storageData:string = localStorage.getItem(key)!;//"!" here since we vetted in doesKeyExist
         const formattedData = JSON.parse(storageData);
@@ -19,8 +19,8 @@ export function ReadLocalStorage(key:string):ItemSetInterface[]|any {
     }
 }
 
-export function DeleteFromLocalStorage(modCard:ItemSetInterface):void {
-    const dirtyLocalstorage = ReadLocalStorage("itemSet");
+export function DeleteFromModList(modCard:ItemSetInterface):void {
+    const dirtyLocalstorage = ReadLocalStorageSection("itemSet");
     let cleanLocalstorage = dirtyLocalstorage.filter((obj:ItemSetInterface) => obj.setName !== modCard.setName);
     overrideLocalstorageItemset(cleanLocalstorage);
 }

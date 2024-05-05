@@ -1,3 +1,3 @@
 
-import {PostLocalStorage, ReadLocalStorage, DeleteFromLocalStorage, DropLocalStorage} from './localStorageCalls';
+import {PostLocalStorage, ReadLocalStorageSection, DeleteFromModList, DropLocalStorage} from './localStorageCalls';
 
