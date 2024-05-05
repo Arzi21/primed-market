@@ -3,16 +3,10 @@ import { ItemSetInterface } from "../interfaces/itemSetInterface";
 //this is where we'll communicate with localhost for user added sets
 
 
-export function PostLocalStorage(key:string, value:any) {
-    let prevValue:any = []
-    if (doesKeyExist(key)) {
-        prevValue = localStorage.getItem(key);
-        prevValue = JSON.parse(prevValue);
-    }
-    const updatedLocalStorageData = {data: [...prevValue.data, value]}
-
-    const localStorageUpdate = JSON.stringify(updatedLocalStorageData);
-    localStorage.setItem(key, localStorageUpdate);
+export function PostLocalStorage(key:string, value:ItemSetInterface):void {
+    const prevValue = ReadLocalStorage(key);
+    const updatedLocalStorageArray = [...prevValue.data, value]
+    overrideLocalstorageItemset(updatedLocalStorageArray);
 }
 
 export function ReadLocalStorage(key:string):ItemSetInterface[]|any {
@@ -25,21 +19,15 @@ export function ReadLocalStorage(key:string):ItemSetInterface[]|any {
     }
 }
 
-export function DeleteFromLocalStorage(modCard:ItemSetInterface) {
-    // console.warn("deletion currently not set up. Cannot delete key: " + modCard.setName);
-
+export function DeleteFromLocalStorage(modCard:ItemSetInterface):void {
     const dirtyLocalstorage = ReadLocalStorage("itemSet");
     let cleanLocalstorage = dirtyLocalstorage.filter((obj:ItemSetInterface) => obj.setName !== modCard.setName);
-    const localStoragePackage = JSON.stringify({data: [...cleanLocalstorage]});
-    localStorage.setItem("itemSet", localStoragePackage);
+    overrideLocalstorageItemset(cleanLocalstorage);
 }
 
-export function DropLocalStorage() {
-    //hard coding access to this
+export function DropLocalStorage():void {
     const isTableDropAllowed = true;
-
     const promptUserConfirmation = window.confirm("Dropping the entire table is irreversible.");
-
     if (isTableDropAllowed && promptUserConfirmation) {
         localStorage.clear();
     } else {
@@ -47,7 +35,7 @@ export function DropLocalStorage() {
     }
 }
 
-export function InitialiseTestValue() {
+export function InitialiseTestValue():Array<ItemSetInterface> {
     //temporary measure
     const exampleSet:ItemSetInterface = {
         setName: "Survival mods", 
@@ -56,14 +44,18 @@ export function InitialiseTestValue() {
         setDescription: "This is a starter itemset, it only exsits as an example for how to use this webapp."
     };
     
-    localStorage.setItem("itemSet", JSON.stringify({data: [exampleSet]}));
-    const itemSet = [exampleSet];
-    return itemSet
+    overrideLocalstorageItemset([exampleSet]);
+    return [exampleSet];
 }
 
 
 
-function doesKeyExist(key:string) {
+function overrideLocalstorageItemset(newPackage:Array<ItemSetInterface>) {
+    const updatePackage = JSON.stringify({data: newPackage});
+    localStorage.setItem("itemSet", updatePackage);
+}
+
+function doesKeyExist(key:string):boolean {
     const storageData = localStorage.getItem(key);
     if (storageData) {
         return true
