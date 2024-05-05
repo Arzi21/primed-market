@@ -35,7 +35,7 @@ export function DropLocalStorage():void {
     }
 }
 
-export function InitialiseTestValue():Array<ItemSetInterface> {
+export function InitialiseTestValue():ItemSetInterface[] {
     //temporary measure
     const exampleSet:ItemSetInterface = {
         setName: "Survival mods", 
@@ -50,7 +50,7 @@ export function InitialiseTestValue():Array<ItemSetInterface> {
 
 
 
-function overrideLocalstorageItemset(newPackage:Array<ItemSetInterface>) {
+function overrideLocalstorageItemset(newPackage:ItemSetInterface[]):void {
     const updatePackage = JSON.stringify({data: newPackage});
     localStorage.setItem("itemSet", updatePackage);
 }
