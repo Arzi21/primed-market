@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PostLocalStorage } from "../helpers/localStorageCalls";
+import { UpdateLocalStorage } from "../helpers/localStorageCalls";
 import { ItemSetInterface } from "../interfaces/itemSetInterface";
 
 import styles from "./newItemSet.module.css";
@@ -43,7 +43,7 @@ export const NewItemSet = () => {
 
         //form validation needed
 
-        PostLocalStorage("itemSet", itemSet);
+        UpdateLocalStorage("itemSet", itemSet);
         setItemSet(emptyItemSet);
     }
 
