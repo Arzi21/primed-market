@@ -8,9 +8,9 @@ export const ItemSetCard = (props: {itemSet:ItemSetInterface, displayDelete:bool
     const {itemSet, displayDelete, deleteFunc} = props
 
     return (
-    <div className={styles.wrapperCard}>
+    <div className={styles.cardWrapper}>
         {displayDelete && <button className={styles.deletionButton} onClick={()=> {deleteFunc(itemSet)}}> Delete </button>}
-        <Link to={"/set/" + itemSet.setNameUrl} className={styles.linkCard}>
+        <Link to={"/set/" + itemSet.setNameUrl} className={styles.cardLink}>
             <h3> {itemSet.setName} </h3>
             <p> {itemSet.setItemUrls.length} </p>
             <p> {itemSet.setDescription} </p>

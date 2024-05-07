@@ -5,27 +5,27 @@
 
 */
 
-.wrapperCard {
+.cardWrapper {
     border: 2px solid var(--main_font);
     margin: 0;
     padding: 16px;
 }
 
-.linkCard {
+.cardLink {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
 
-.linkCard > h3 {
+.cardLink > h3 {
 
 }
 
-.linkCard > p:first-of-type {
+.cardLink > p:first-of-type {
     text-align: right;
 }
 
-.linkCard > p:last-of-type {
+.cardLink > p:last-of-type {
     grid-area: 2 / 1 / 3 / 3;
 }
 
