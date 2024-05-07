@@ -9,10 +9,10 @@ import styles from "./main.module.css";
 export const Main = () => {
 
     const [isDeletable, setIsDeletable] = useState(false);
-    const [itemSet, setItemSet] = useState(ReadLocalStorageSection("itemSet"))
+    const [itemSet, setItemSet] = useState(ReadLocalStorageSection("itemSet"));
 
     function filterModList(toberemoved:ItemSetInterface) {
-        const newModList = itemSet.filter((obj:ItemSetInterface) => obj !== toberemoved)
+        const newModList = itemSet.filter((obj:ItemSetInterface) => obj !== toberemoved);
         setItemSet(newModList);
         DeleteFromModList(toberemoved);
     }
