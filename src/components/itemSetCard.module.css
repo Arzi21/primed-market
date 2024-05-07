@@ -8,25 +8,30 @@
 .cardWrapper {
     border: 2px solid var(--main_font);
     margin: 0;
-    padding: 16px;
 }
 
-.cardLink {
+/* .cardLink {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+} */
+
+.cardLink > div {
+    background-color: darkred;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 36px;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.cardLink > h3 {
-
-}
-
-.cardLink > p:first-of-type {
+.cardLink > div > p:first-of-type {
     text-align: right;
 }
 
-.cardLink > p:last-of-type {
-    grid-area: 2 / 1 / 3 / 3;
+.cardLink > p {
+    padding: 16px;
 }
 
 .deletionButton {
