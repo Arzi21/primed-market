@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ItemSetInterface } from "../interfaces/itemSetInterface"
-import { DeleteFromModList } from "../helpers/localStorageCalls";
 import styles from "./itemSetCard.module.css";
 
 export const ItemSetCard = (props: {itemSet:ItemSetInterface, displayDelete:boolean, deleteFunc:any}) => {
