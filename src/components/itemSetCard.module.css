@@ -16,7 +16,7 @@ h3 {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    padding: 0 var(--padding_wrapper);
+    padding: 0 var(--padding_wrapper) var(--padding_wrapper) var(--padding_wrapper);
 }
 
 .cardLink > p:first-of-type {
