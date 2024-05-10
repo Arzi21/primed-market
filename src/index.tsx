@@ -12,7 +12,7 @@ import { NewItemSet } from './layout/newItemSet';
 const route = createBrowserRouter([
   { path: '/', element: <RootLayout/>, children: [
     { path: '/', element: <Main/>},
-    { path: '/set/*', element: <ItemSetHighlight/>},
+    { path: '/set/:setName', element: <ItemSetHighlight/>},
     { path: '/new_Set', element: <NewItemSet/>}
   ]}
 ]);
