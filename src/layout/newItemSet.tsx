@@ -87,6 +87,7 @@ export const NewItemSet = () => {
                 <textarea 
                     name="setDescription" 
                     value={itemSet.setDescription} 
+
                     onChange={handleInputUpdates}
                     placeholder="test"
                 />
