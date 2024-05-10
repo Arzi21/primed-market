@@ -19,10 +19,19 @@ export const NewItemSet = () => {
 
 
     function handleInputUpdates(event:any) {
-        setItemSet({
-            ...itemSet,
-            [event.target.name]: event.target.value
-        });
+        if (event.target.name === "setName") {
+            const unspacedInput = event.target.value.replaceAll(" ", "_");
+            setItemSet({
+                ...itemSet,
+                [event.target.name]: event.target.value,
+                setNameUrl: unspacedInput
+            });
+        } else {
+            setItemSet({
+                ...itemSet,
+                [event.target.name]: event.target.value
+            });
+        }
     }
 
     function handleInputArrayUpdates(inputValue:string, index:number) {
@@ -87,7 +96,6 @@ export const NewItemSet = () => {
                 <textarea 
                     name="setDescription" 
                     value={itemSet.setDescription} 
-
                     onChange={handleInputUpdates}
                     placeholder="test"
                 />
