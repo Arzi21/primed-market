@@ -22,7 +22,7 @@ export function ReadLocalStorageSection(key:string):ItemSetInterface[]|any {
 export function ReadModListSet(setName:string) {
     const fullModList = ReadLocalStorageSection("itemSet");
     const filteredModList = fullModList.filter(
-        (modlist:ItemSetInterface) => modlist.setNameUrl == setName
+        (modlist:ItemSetInterface) => modlist.setNameUrl === setName
     );
     return filteredModList[0];
     //note: we're unarraying this array, assuming that we only get one value back
