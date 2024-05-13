@@ -10,8 +10,8 @@
 
     margin-top: 20px;
     border-top: 1px solid var(--main_font);
-}
 
-.footer > p {
-    color: var(--main_font);
+    & > p {
+        color: var(--main_font);
+    }
 }

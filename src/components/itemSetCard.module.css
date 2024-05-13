@@ -19,14 +19,16 @@ h3 {
     padding: 0 var(--padding_wrapper) var(--padding_wrapper) var(--padding_wrapper);
 }
 
-.cardLink > p:first-of-type {
-    background-color: var(--cardheader_color);
-    text-align: right;
-    padding-right: var(--padding_wrapper);
-}
+.cardLink {
+    & > p:first-of-type {
+        background-color: var(--cardheader_color);
+        text-align: right;
+        padding-right: var(--padding_wrapper);
+    }
 
-.cardLink > p:last-of-type {
-    padding: var(--padding_wrapper);
+    & > p:last-of-type {
+        padding: var(--padding_wrapper);
+    }
 }
 
 .deletionButton {
