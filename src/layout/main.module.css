@@ -9,16 +9,16 @@
     color: var(--main_font);
     padding: var(--outer_wrapper_margin);
     font-size: var(--title_lg);
-}
 
-.main p {
-    margin: 0;
-    line-height: 1em;
-}
+    & p {
+        margin: 0;
+        line-height: 1em;
+    }
 
-.main a {
-    color: var(--main_font);
-    text-decoration: none;
+    & a {
+        color: var(--main_font);
+        text-decoration: none;
+    }
 }
 
 .modListGrid {

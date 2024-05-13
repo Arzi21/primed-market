@@ -14,13 +14,13 @@
     grid-template-columns:  1fr;
 
     border-bottom: 1px solid var(--main_font);
-}
 
-header > h1 {
-    line-height: 1em;
-}
+    & > h1 {
+        line-height: 1em;
+    }
 
-header > input {
-    font-size: var(--title_mb);
-    color: var(--dark_font);
+    & > input {
+        font-size: var(--title_mb);
+        color: var(--dark_font);
+    }
 }
