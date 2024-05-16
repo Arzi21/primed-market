@@ -19,7 +19,7 @@ export const NewItemSet = () => {
 
 
     function handleInputUpdates(event:any) {
-        if (event.target.name === "") {
+        if (event.target.name === "setName") {
             setItemSet({
                 ...itemSet,
                 [event.target.name]: event.target.value,
@@ -37,7 +37,7 @@ export const NewItemSet = () => {
         let mutableItemUrls = itemSet.setItemUrls;
         mutableItemUrls = mutableItemUrls.map((_, i) => {
             if (i === index) {
-                return inputValue.replaceAll(" ", "_");
+                return inputValue;
             } else {
                 return mutableItemUrls[i];
             }
