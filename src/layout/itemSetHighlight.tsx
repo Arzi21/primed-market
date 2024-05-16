@@ -21,20 +21,22 @@ export const ItemSetHighlight = () => {
 
 
         let modSetItemUrls = modSet.setItemUrls
-        for (let modUrlFriendlyName of modSetItemUrls) {
-        // for (let modUrlFriendlyName of ['vitality']) {
+        // for (let modUrlFriendlyName of modSetItemUrls) {
+        for (let modUrlFriendlyName of ['vitality']) {
             //create state for mod items,
             //in this loop we call and bind api return to state
             //use state to template the values into a table
 
             //Bonus: trottle quantity of api calls to avoid overcalling
 
-            console.log('test: ' + modUrlFriendlyName);
+
+
+            //if we want to fetch this api we need to either disable cors, or use a proxy server to handle the dataflow.
+            //currently we'll be using a chrome extension to block cors requests. if this works it MUST be replaced (if we made a backend)
             const apiAddress = initalApiUrl + "/items/" + modUrlFriendlyName;
-            console.log(apiAddress);
-            // fetch(apiAddress)
-            // .then(res => res.json())
-            // .then(data => setModApiSet(data.payload));
+            fetch(apiAddress)
+            .then(res => res.json())
+            .then(data => setModApiSet(data.payload));
         }
     }, [modSet]);
 
