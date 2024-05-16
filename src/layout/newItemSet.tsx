@@ -19,23 +19,31 @@ export const NewItemSet = () => {
 
 
     function handleInputUpdates(event:any) {
-        setItemSet({
-            ...itemSet,
-            [event.target.name]: event.target.value
-        });
+        if (event.target.name === "") {
+            setItemSet({
+                ...itemSet,
+                [event.target.name]: event.target.value,
+                setNameUrl: event.target.value.replaceAll(" ", "_")
+            });
+        } else {
+            setItemSet({
+                ...itemSet,
+                [event.target.name]: event.target.value
+            });
+        }
     }
 
     function handleInputArrayUpdates(inputValue:string, index:number) {
         let mutableItemUrls = itemSet.setItemUrls;
         mutableItemUrls = mutableItemUrls.map((_, i) => {
             if (i === index) {
-                return inputValue;
+                return inputValue.replaceAll(" ", "_");
             } else {
                 return mutableItemUrls[i];
             }
         });
 
-        setItemSet(prev => ({...prev, setItemUrls:mutableItemUrls}));
+        setItemSet(prev => ({...prev, setItemUrls: mutableItemUrls}));
     }
 
     function handleSubmit(formData:any) {
