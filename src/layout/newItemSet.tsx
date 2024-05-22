@@ -19,10 +19,18 @@ export const NewItemSet = () => {
 
 
     function handleInputUpdates(event:any) {
-        setItemSet({
-            ...itemSet,
-            [event.target.name]: event.target.value
-        });
+        if (event.target.name === "setName") {
+            setItemSet({
+                ...itemSet,
+                [event.target.name]: event.target.value,
+                setNameUrl: event.target.value.replaceAll(" ", "_")
+            });
+        } else {
+            setItemSet({
+                ...itemSet,
+                [event.target.name]: event.target.value
+            });
+        }
     }
 
     function handleInputArrayUpdates(inputValue:string, index:number) {
@@ -35,7 +43,7 @@ export const NewItemSet = () => {
             }
         });
 
-        setItemSet(prev => ({...prev, setItemUrls:mutableItemUrls}));
+        setItemSet(prev => ({...prev, setItemUrls: mutableItemUrls}));
     }
 
     function handleSubmit(formData:any) {
