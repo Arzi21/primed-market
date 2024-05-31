@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-import { ReadLocalStorageSection, InitialiseTestValue, DeleteFromModList } from "../helpers/localStorageCalls";
+import { ReadLocalStorageSection, DeleteFromModList } from "../helpers/localStorageCalls";
 import { ItemSetCard } from "../components/itemSetCard";
 import { ItemSetInterface } from "../interfaces/itemSetInterface";
 import styles from "./main.module.css";
