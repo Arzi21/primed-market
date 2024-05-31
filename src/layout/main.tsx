@@ -4,7 +4,10 @@ import { useState } from "react";
 import { ReadLocalStorageSection, DeleteFromModList } from "../helpers/localStorageCalls";
 import { ItemSetCard } from "../components/itemSetCard";
 import { ItemSetInterface } from "../interfaces/itemSetInterface";
+import { HeroImage } from "../components/heroImage";
 import styles from "./main.module.css";
+
+import image from "../imgs/heroimg1.png";
 
 export const Main = () => {
 
@@ -18,6 +21,8 @@ export const Main = () => {
     }
 
     return(
+        <>
+        <HeroImage imageName={image}/>
         <section className={styles.main}>
             <h2>Mod List</h2> 
             <div className="interactionBar">
@@ -34,5 +39,6 @@ export const Main = () => {
                 )) : <p> No item sets added yet. <Link to={"/new_Set/"}> Create your first set!</Link></p>}
             </article>
         </section>
+        </>
     );
 }
