@@ -6,7 +6,8 @@
 */
 
 .main {
-    color: var(--main_font);
+    color: var(--font-light);
+
     padding: var(--outer_wrapper_margin);
     font-size: var(--title_lg);
 
@@ -16,7 +17,7 @@
     }
 
     & a {
-        color: var(--main_font);
+        color: var(--font-light);
         text-decoration: none;
     }
 }
