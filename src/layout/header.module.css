@@ -16,8 +16,9 @@
 
     & > h1 {
         font-family: "Noto Sans Elymaic", sans-serif;
-        font-weight: 600;
+        font-weight: 800;
         font-style: normal;
+
         letter-spacing: 0.21em;
         text-transform: uppercase;
       }
