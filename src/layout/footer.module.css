@@ -9,9 +9,9 @@
     font-size: var(--prg_sm);
 
     margin-top: 20px;
-    border-top: 1px solid var(--main_font);
+    border-top: 1px solid var(--font-light);
 
     & > p {
-        color: var(--main_font);
+        color: var(--font-light);
     }
 }
