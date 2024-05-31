@@ -1,0 +1,14 @@
+/*
+
+/*  button styles, to be exported as a class and used inline
+
+*/
+
+
+
+.Small {
+    background-color: var(--color-primary);
+    color: var(--font-light);
+    border: 2px solid var(--color-primary);
+
+}
