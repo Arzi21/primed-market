@@ -9,16 +9,21 @@
     color: var(--font-light);
     padding: var(--outer_wrapper_margin);
     font-size: var(--title_lg);
+    background-color: var(--color-primary);
 
     display: grid;
     grid-template-columns:  1fr;
 
     & > h1 {
-        line-height: 1em;
-    }
+        font-family: "Noto Sans Elymaic", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        letter-spacing: 0.21em;
+        text-transform: uppercase;
+      }
 
-    & > input {
+    /* & > input {
         font-size: var(--title_mb);
         color: var(--font-dark);
-    }
+    } */
 }
