@@ -12,7 +12,7 @@
 }
 
 h3 {
-    background-color: var(--cardheader_color);
+    background-color: var(--color-primary);
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -21,7 +21,7 @@ h3 {
 
 .cardLink {
     & > p:first-of-type {
-        background-color: var(--cardheader_color);
+        background-color: var(--color-primary);
         text-align: right;
         padding-right: var(--padding_wrapper);
     }
