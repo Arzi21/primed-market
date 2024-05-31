@@ -8,7 +8,17 @@
     /* colours */
     --main_bg: #20242e;
     --main_font: #CCC5A6;
+    --font-light: #E5CEA8;
+    --font-dark: #24114D;
     --dark_font: var(--main_bg);
+
+    --color-primary: #4B337E;
+    --color-secondary: #704AA4;
+    --color-tetriery: #704AA4;
+    --font-light: #E5CEA8;
+    --font-dark: #24114D;
+    --bg-main: #E8E8E8;
+    --bg-accent: #F5F5F5;
 
     /* layout/structure */
     --outer_wrapper_margin: 48px;
