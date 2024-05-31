@@ -10,7 +10,7 @@
     background-color: var(--color-primary);
     color: var(--font-light);
     border: 2px solid var(--color-primary);
-    border-radius: 8px;
+    border-radius: 5px;
     padding: 0 8px;
     text-decoration: none;
     font-size: var(--prg_md);
