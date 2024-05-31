@@ -22,9 +22,9 @@ export const Main = () => {
 
     return(
         <>
-        <HeroImage imageName={image}/>
+        <HeroImage imagePath={image}/>
         <section className={styles.main}>
-            <h2>Mod List</h2> 
+            <h2>Item Sets</h2> 
             <div className="interactionBar">
                 <button></button>
                 <button></button>

@@ -6,10 +6,14 @@
 */
 
 .main {
-    color: var(--font-light);
+    color: var(--font-dark);
 
     padding: var(--outer_wrapper_margin);
     font-size: var(--title_lg);
+
+    & h2 {
+        font-weight: 400;
+    }
 
     & p {
         margin: 0;
