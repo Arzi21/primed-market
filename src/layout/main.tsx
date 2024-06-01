@@ -8,6 +8,7 @@ import { HeroImage } from "../components/heroImage";
 import styles from "./main.module.css";
 
 import image from "../imgs/heroimg1.png";
+import { DropdownOptions } from "../components/dropdownOptions";
 
 export const Main = () => {
 
@@ -20,18 +21,24 @@ export const Main = () => {
         DeleteFromModList(toberemoved);
     }
 
+    function toggleDeletability() {
+        setIsDeletable(!isDeletable);
+    }
+
+    function testAction() {
+        alert("test");
+    }
+
+    const dropdownActions = [toggleDeletability, testAction, testAction];
+    const dropdownLabels = ["Delete", "Test", "Test"];
+
     return(
         <>
         <HeroImage imagePath={image}/>
         <section className={styles.main}>
-            <h2>Item Sets</h2> 
-            <div className="interactionBar">
-                <button></button>
-                <button></button>
-                <label> 
-                    &#128465;
-                    <input type="checkbox" onClick={()=> (setIsDeletable(!isDeletable))}></input>
-                </label>
+            <div className="sectionHeader">
+                <h2>Item Sets</h2> 
+                <DropdownOptions dropdownActions= {dropdownActions} dropdownLabels={dropdownLabels}/>
             </div>
             <article className={styles.modListGrid}>
                 {itemSet ? itemSet.map((itemSetValues:ItemSetInterface, index:number) => (
