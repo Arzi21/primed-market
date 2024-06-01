@@ -2,13 +2,12 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import { ReadLocalStorageSection, DeleteFromModList } from "../helpers/localStorageCalls";
-import { ItemSetCard } from "../components/itemSetCard";
 import { ItemSetInterface } from "../interfaces/itemSetInterface";
-import { HeroImage } from "../components/heroImage";
-import styles from "./main.module.css";
-
-import image from "../imgs/heroimg1.png";
 import { DropdownOptions } from "../components/dropdownOptions";
+import { ItemSetCard } from "../components/itemSetCard";
+import { HeroImage } from "../components/heroImage";
+import image from "../imgs/heroimg1.png";
+import styles from "./main.module.css";
 
 export const Main = () => {
 
@@ -42,7 +41,7 @@ export const Main = () => {
             </div>
             <article className={styles.modListGrid}>
                 {itemSet ? itemSet.map((itemSetValues:ItemSetInterface, index:number) => (
-                        <ItemSetCard itemSet={itemSetValues} displayDelete={isDeletable} deleteFunc={filterModList} key={index + itemSetValues.setNameUrl}/>
+                    <ItemSetCard itemSet={itemSetValues} displayDelete={isDeletable} deleteFunc={filterModList} key={index + itemSetValues.setNameUrl}/>
                 )) : <p> No item sets added yet. <Link to={"/new_Set/"}> Create your first set!</Link></p>}
             </article>
         </section>
