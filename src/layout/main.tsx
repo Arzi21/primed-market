@@ -36,7 +36,7 @@ export const Main = () => {
         <>
         <HeroImage imagePath={image}/>
         <section className={styles.main}>
-            <div className="sectionHeader">
+            <div className={styles.sectionHeader}>
                 <h2>Item Sets</h2> 
                 <DropdownOptions dropdownActions= {dropdownActions} dropdownLabels={dropdownLabels}/>
             </div>

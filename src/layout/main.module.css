@@ -26,6 +26,12 @@
     }
 }
 
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 .modListGrid {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
