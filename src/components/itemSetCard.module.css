@@ -6,9 +6,8 @@
 */
 
 .cardWrapper {
-    border: 2px solid var(--main_font);
     --padding_wrapper: 12px;
-    --cardheader_color: rgb(72, 33, 90);
+    border: 2px solid var(--main_font);
 }
 
 h3 {
@@ -20,14 +19,18 @@ h3 {
 }
 
 .cardLink {
+
     & > p:first-of-type {
-        background-color: var(--color-primary);
         text-align: right;
+        background-color: var(--color-primary);
         padding-right: var(--padding_wrapper);
     }
 
     & > p:last-of-type {
+        min-height: 240px;
+        color: var(--bg-secondary);
         padding: var(--padding_wrapper);
+        background-color: var(--color-secondary);
     }
 }
 
