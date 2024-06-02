@@ -34,7 +34,6 @@
             border-radius: 10px;
             background-color: var(--bg-secondary);
             width: calc(var(--svg-width) * 2);
-            height: 225px;
             list-style: none;
             padding: 0; 
 
