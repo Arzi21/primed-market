@@ -27,10 +27,12 @@ h3 {
     }
 
     & > p:last-of-type {
-        min-height: 240px;
+        height: 174px;
+        font-size: var(--prg_sm);
         color: var(--bg-secondary);
         padding: var(--padding_wrapper);
         background-color: var(--color-secondary);
+        overflow: hidden;
     }
 }
 
