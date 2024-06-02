@@ -6,12 +6,18 @@
 
 :root {
     /* colours */
-    --main_bg: #20242e;
-    --main_font: #CCC5A6;
-    --dark_font: var(--main_bg);
+    --color-primary: #4B337E;
+    --color-secondary: #704AA4;
+    --color-tetriery: #704AA4;
+
+    --font-light: #E5CEA8;
+    --font-dark: #24114D;
+    
+    --bg-primary: #E8E8E8;
+    --bg-secondary: #F5F5F5;
 
     /* layout/structure */
-    --outer_wrapper_margin: 48px;
+    --outer_wrapper_margin: 20px;
 
     /* font/typography */
     font-size: 16px;
@@ -20,12 +26,18 @@
     --title_sm: 1.5em;
     --prg_lg: 1.75em;
     --prg_md: 1.5em;
-    --prg_sm: 1.25em;
+    --prg_sm: .75em;
 
     --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-}
+
+    /* else */
+    --shadow: 4px 4px 8px #00000025;
+
+
+    
+} 
 
 h1, h2, h3, p, a {
     margin: 0;

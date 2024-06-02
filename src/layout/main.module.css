@@ -6,9 +6,14 @@
 */
 
 .main {
-    color: var(--main_font);
+    color: var(--font-dark);
+
     padding: var(--outer_wrapper_margin);
     font-size: var(--title_lg);
+
+    & h2 {
+        font-weight: 400;
+    }
 
     & p {
         margin: 0;
@@ -16,9 +21,15 @@
     }
 
     & a {
-        color: var(--main_font);
+        color: var(--font-light);
         text-decoration: none;
     }
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .modListGrid {

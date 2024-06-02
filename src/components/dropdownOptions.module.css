@@ -1,0 +1,57 @@
+/*
+
+/*
+
+*/
+
+:root { /* hard coded svg width reference */
+    --svg-width: 88px;
+}
+
+.interactionBar {
+    float: right;
+    font-size: 0;
+
+    & button {
+        border: none;
+        background-color: inherit;
+        padding: 0;
+        width: calc(var(--svg-width) * 2);
+
+        & svg {
+            width: var(--svg-width);
+            float: right;
+            cursor: pointer;
+        }
+    }
+
+    & div {
+        position: absolute;
+        font-size: 0;
+
+        & ul {
+            border: 1px solid var(--color-primary);
+            border-radius: 10px;
+            background-color: var(--bg-secondary);
+            width: calc(var(--svg-width) * 2);
+            list-style: none;
+            padding: 0; 
+
+            & li {
+
+                /* & label {
+
+                } */
+
+                & button {
+                    cursor: pointer;
+                    width:100%;
+                    padding: 10px;
+                    font-size: 20px;
+                    line-height: 1em;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

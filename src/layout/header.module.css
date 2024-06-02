@@ -6,21 +6,25 @@
 */
 
 .header {
-    color: var(--main_font);
+    color: var(--font-light);
     padding: var(--outer_wrapper_margin);
     font-size: var(--title_lg);
+    background-color: var(--color-primary);
 
     display: grid;
     grid-template-columns:  1fr;
 
-    border-bottom: 1px solid var(--main_font);
-
     & > h1 {
-        line-height: 1em;
-    }
+        font-family: "Noto Sans Elymaic", sans-serif;
+        font-weight: 800;
+        font-style: normal;
 
-    & > input {
+        letter-spacing: 0.21em;
+        text-transform: uppercase;
+      }
+
+    /* & > input {
         font-size: var(--title_mb);
-        color: var(--dark_font);
-    }
+        color: var(--font-dark);
+    } */
 }

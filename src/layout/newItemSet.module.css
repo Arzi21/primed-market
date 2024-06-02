@@ -21,7 +21,7 @@
 }
 
 .outerWrapper label {
-    color: var(--main_font);
+    color: var(--font-dark);
     font-size: var(--prg_lg);
     margin: 16px 0px;
 }
