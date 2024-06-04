@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import { ItemSetRow } from "../components/itemSetRow";
 import { ReadModListSet } from "../helpers/localStorageCalls";
 import { ItemSetInterface } from "../interfaces/itemSetInterface";
 
@@ -41,10 +42,11 @@ export const ItemSetHighlight = () => {
     }, []);
 
 
+    console.log(modApiSet);
 
-    let template = modSet.setItemUrls.map((modItem:string, index:number) => (
-        <p key={modSetName + "_" + index + 1}> {modItem} </p>
+    let template = modSet.setItemUrls.map((setItemUrlName:string, index:number) => (
+        <ItemSetRow key={modSetName + "_" + index + 1} itemUrl={setItemUrlName}/>
     ));
 
-    return <> {template} </>
+    return <section> {template} </section>
 }
