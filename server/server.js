@@ -14,7 +14,13 @@ const logger = function() {
 
 
 app.get('/', (req, res) => {
-    res.send("Hello World")
+    axios.get("https://api.warframe.market/v1/items")
+    .then((response) => {
+        res.json(response.data)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
 })
 
 app.listen(port, () => {
