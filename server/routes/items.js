@@ -26,4 +26,14 @@ router.get('/:itemName', (req, res) => {
     })
 })
 
+router.get('/:itemName/orders', (req, res) => {
+    axios.get(api + "/" + req.params.itemName + "/orders")
+    .then((response) => {
+        res.json(response.data)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+})
+
 module.exports = router
