@@ -2,8 +2,15 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import { ReadLocalStorageSection, DeleteFromModList } from "../helpers/localStorageCalls";
+<<<<<<< HEAD
 import { ItemSetCard } from "../components/itemSetCard";
+=======
+>>>>>>> master
 import { ItemSetInterface } from "../interfaces/itemSetInterface";
+import { DropdownOptions } from "../components/dropdownOptions";
+import { ItemSetCard } from "../components/itemSetCard";
+import { HeroImage } from "../components/heroImage";
+import image from "../imgs/heroimg1.png";
 import styles from "./main.module.css";
 
 export const Main = () => {
@@ -17,22 +24,31 @@ export const Main = () => {
         DeleteFromModList(toberemoved);
     }
 
+    function toggleDeletability() {
+        setIsDeletable(!isDeletable);
+    }
+
+    function testAction() {
+        alert("test");
+    }
+
+    const dropdownActions = [toggleDeletability, testAction, testAction];
+    const dropdownLabels = ["Delete", "Test", "Test"];
+
     return(
+        <>
+        <HeroImage imagePath={image}/>
         <section className={styles.main}>
-            <h2>Mod List</h2> 
-            <div className="interactionBar">
-                <button></button>
-                <button></button>
-                <label> 
-                    &#128465;
-                    <input type="checkbox" onClick={()=> (setIsDeletable(!isDeletable))}></input>
-                </label>
+            <div className={styles.sectionHeader}>
+                <h2>Item Sets</h2> 
+                <DropdownOptions dropdownActions= {dropdownActions} dropdownLabels={dropdownLabels}/>
             </div>
             <article className={styles.modListGrid}>
                 {itemSet ? itemSet.map((itemSetValues:ItemSetInterface, index:number) => (
-                        <ItemSetCard itemSet={itemSetValues} displayDelete={isDeletable} deleteFunc={filterModList} key={index + itemSetValues.setNameUrl}/>
+                    <ItemSetCard itemSet={itemSetValues} displayDelete={isDeletable} deleteFunc={filterModList} key={index + itemSetValues.setNameUrl}/>
                 )) : <p> No item sets added yet. <Link to={"/new_Set/"}> Create your first set!</Link></p>}
             </article>
         </section>
+        </>
     );
 }

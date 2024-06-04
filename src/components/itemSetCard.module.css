@@ -6,31 +6,49 @@
 */
 
 .cardWrapper {
-    border: 2px solid var(--main_font);
     --padding_wrapper: 12px;
-    --cardheader_color: rgb(72, 33, 90);
+    border: 2px solid var(--main_font);
 }
 
 h3 {
-    background-color: var(--cardheader_color);
+    background-color: var(--color-primary);
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    padding: 0 var(--padding_wrapper) var(--padding_wrapper) var(--padding_wrapper);
+    padding: 0 var(--padding_wrapper);
 }
 
-.cardLink > p:first-of-type {
-    background-color: var(--cardheader_color);
-    text-align: right;
-    padding-right: var(--padding_wrapper);
-}
+.cardLink {
 
-.cardLink > p:last-of-type {
-    padding: var(--padding_wrapper);
+    & > p:first-of-type {
+        text-align: right;
+        background-color: var(--color-primary);
+        padding-right: var(--padding_wrapper);
+    }
+
+    & > p:last-of-type {
+        height: 174px;
+        font-size: var(--prg_sm);
+        color: var(--bg-secondary);
+        padding: var(--padding_wrapper);
+        background-color: var(--color-secondary);
+        overflow: hidden;
+    }
 }
 
 .deletionButton {
     padding: var(--padding_wrapper);
     margin-left: var(--padding_wrapper);
     float: right;
+
+    background-color: var(--color-primary);
+    color: var(--font-light);
+    border: 2px solid var(--color-secondary);
+    border-radius: 5px;
+    padding: 8px;
+    margin: 6px;
+    font-size: 20px;
+    line-height: 15px;
+    font-weight: 600;
+    box-shadow: var(--shadow);
 }

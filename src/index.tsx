@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './index.css';
-import './theme.css';
+import './styles/theme.css';
 import { RootLayout } from './routes/rootLayout';
 import { ItemSetHighlight } from './layout/itemSetHighlight';
 import { Main } from './layout/main';

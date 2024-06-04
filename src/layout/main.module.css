@@ -6,19 +6,30 @@
 */
 
 .main {
-    color: var(--main_font);
+    color: var(--font-dark);
+
     padding: var(--outer_wrapper_margin);
     font-size: var(--title_lg);
+
+    & h2 {
+        font-weight: 400;
+    }
+
+    & p {
+        margin: 0;
+        line-height: 1em;
+    }
+
+    & a {
+        color: var(--font-light);
+        text-decoration: none;
+    }
 }
 
-.main p {
-    margin: 0;
-    line-height: 1em;
-}
-
-.main a {
-    color: var(--main_font);
-    text-decoration: none;
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .modListGrid {
