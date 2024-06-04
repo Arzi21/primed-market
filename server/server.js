@@ -1,6 +1,8 @@
 
 const express = require("express")
-const axios = require("axios")
+const router = express.Router()
+
+const itemRouter = require("./routes/items")
 
 
 const app = express()
@@ -12,16 +14,7 @@ const logger = function() {
 
 
 
-
-app.get('/', (req, res) => {
-    axios.get("https://api.warframe.market/v1/items")
-    .then((response) => {
-        res.json(response.data)
-    })
-    .catch((err) => {
-        console.log(err)
-    })
-})
+app.use('/items', itemRouter)
 
 app.listen(port, () => {
     logger()
