@@ -20,18 +20,10 @@ export const NewItemSet = () => {
 
     function handleInputUpdates(event:any) {
         if (event.target.name === "setName") {
-<<<<<<< HEAD
-            const unspacedInput = event.target.value.replaceAll(" ", "_");
-            setItemSet({
-                ...itemSet,
-                [event.target.name]: event.target.value,
-                setNameUrl: unspacedInput
-=======
             setItemSet({
                 ...itemSet,
                 [event.target.name]: event.target.value,
                 setNameUrl: event.target.value.replaceAll(" ", "_")
->>>>>>> master
             });
         } else {
             setItemSet({

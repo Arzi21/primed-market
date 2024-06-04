@@ -2,10 +2,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import { ReadLocalStorageSection, DeleteFromModList } from "../helpers/localStorageCalls";
-<<<<<<< HEAD
-import { ItemSetCard } from "../components/itemSetCard";
-=======
->>>>>>> master
 import { ItemSetInterface } from "../interfaces/itemSetInterface";
 import { DropdownOptions } from "../components/dropdownOptions";
 import { ItemSetCard } from "../components/itemSetCard";
