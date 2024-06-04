@@ -22,7 +22,7 @@ export const ItemSetHighlight = () => {
 
         let modSetItemUrls = modSet.setItemUrls
         // for (let modUrlFriendlyName of modSetItemUrls) {
-        for (let modUrlFriendlyName of ['vitality']) {
+        for (let modUrlFriendlyName of modSetItemUrls) {
             //create state for mod items,
             //in this loop we call and bind api return to state
             //use state to template the values into a table
@@ -38,7 +38,7 @@ export const ItemSetHighlight = () => {
             .then(res => res.json())
             .then(data => setModApiSet(data.payload));
         }
-    }, [modSet]);
+    }, []);
 
 
 
