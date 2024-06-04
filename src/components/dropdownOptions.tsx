@@ -2,10 +2,11 @@ import { useState } from "react";
 
 import style from "./dropdownOptions.module.css"
 
-export const DropdownOptions = ({dropdownActions, dropdownLabels}:{dropdownActions:any[], dropdownLabels:string[]}) => {
+export const DropdownOptions = (props: {dropdownActions:any[], dropdownLabels:string[]}) => { 
     // might want to expand this to include other inputs; like checkboxes.
 
     const [displayDropdown, setDisplayDropdown] = useState(false);
+    const {dropdownActions, dropdownLabels} = props;
     
     return( 
         <div className={style.interactionBar}>

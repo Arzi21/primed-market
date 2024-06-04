@@ -3,8 +3,9 @@ import { ItemSetInterface } from "../interfaces/itemSetInterface"
 import styles from "./itemSetCard.module.css";
 import animations from "../styles/animations.module.css";
 
-export const ItemSetCard = ({itemSet, displayDelete, deleteFunc}:{itemSet:ItemSetInterface, displayDelete:boolean, deleteFunc:any}) => {
+export const ItemSetCard = (props: {itemSet:ItemSetInterface, displayDelete:boolean, deleteFunc:any}) => {
 
+    const {itemSet, displayDelete, deleteFunc} = props
 
     return (
     <div className={`${styles.cardWrapper} + ${animations.initializedFadeIn}`}>
