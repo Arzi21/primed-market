@@ -25,7 +25,8 @@ export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
             const apiAddress = apicall + "/items/" + itemUrl;
             fetch(apiAddress)
             .then(res => res.json())
-            .then(data => setModApiSet(data.payload));
+            .then(data => setModApiSet(data.payload))
+            .catch(err => console.log(err))
     }, []);
     console.log(modApiSet);
 
