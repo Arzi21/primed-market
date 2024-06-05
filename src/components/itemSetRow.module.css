@@ -8,15 +8,24 @@
     background-color: var(--bg-secondary);
     color: var(--font-dark);
     display: block;
+    line-height: 64px;
     
+    font-size: var(--prg_lg);
+
     & p {
+        display: flex;
         justify-content: space-between;
+        padding: 0px 16px;
 
         & div {
             display: inline-block;
 
             & span {
 
+                & input {
+                    height: 32px;
+                    width: 32px;
+                }
             }
         }
     }
