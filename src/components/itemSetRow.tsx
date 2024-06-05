@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SetRowInterface } from "../interfaces/setRowInterface";
 
 
 export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
