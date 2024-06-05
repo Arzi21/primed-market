@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { SetRowInterface } from "../interfaces/setRowInterface";
 
+import style from "./itemSetRow.module.css";
 
 export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
 
@@ -42,7 +43,7 @@ export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
     console.log(modApiSet);
 
 
-    return <article>
+    return <article className={style.row}>
         { modApiSet ? <p> 
             <div>
                 <span> <input type="checkbox"/> </span>

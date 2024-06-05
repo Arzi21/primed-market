@@ -1,0 +1,23 @@
+/*
+
+/*
+
+*/
+
+.row {
+    background-color: var(--bg-secondary);
+    color: var(--font-dark);
+    display: block;
+    
+    & p {
+        justify-content: space-between;
+
+        & div {
+            display: inline-block;
+
+            & span {
+
+            }
+        }
+    }
+}
