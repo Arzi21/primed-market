@@ -4,7 +4,17 @@ import { SetRowInterface } from "../interfaces/setRowInterface";
 
 export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
 
-    const [modApiSet, setModApiSet] = useState<any|null>()
+    const mockData = {
+        img: "string",
+        quantity: 1,
+        orderCreator: "string",
+        modRankCurrent: 1,
+        modRankMax: 1,
+        onlineValue: 1,
+        maxValue: 1
+    };
+
+    const [modApiSet, setModApiSet] = useState<SetRowInterface|null>(mockData);
 
 
     useEffect(() => {
@@ -24,10 +34,10 @@ export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
             //if we want to fetch this api we need to either disable cors, or use a proxy server to handle the dataflow.
             //currently we'll be using a chrome extension to block cors requests. if this works it MUST be replaced (if we made a backend)
             const apiAddress = apicall + "/items/" + itemUrl + "/orders";
-            fetch(apiAddress)
-            .then(res => res.json())
-            .then(data => setModApiSet(data.payload))
-            .catch(err => console.log(err))
+            // fetch(apiAddress)
+            // .then(res => res.json())
+            // .then(data => setModApiSet(data.payload))
+            // .catch(err => console.log(err))
     }, []);
     console.log(modApiSet);
 
