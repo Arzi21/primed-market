@@ -22,7 +22,7 @@ export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
 
             //if we want to fetch this api we need to either disable cors, or use a proxy server to handle the dataflow.
             //currently we'll be using a chrome extension to block cors requests. if this works it MUST be replaced (if we made a backend)
-            const apiAddress = apicall + "/items/" + itemUrl;
+            const apiAddress = apicall + "/items/" + itemUrl + "/orders";
             fetch(apiAddress)
             .then(res => res.json())
             .then(data => setModApiSet(data.payload))
