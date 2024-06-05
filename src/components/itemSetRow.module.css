@@ -18,13 +18,31 @@
         padding: 0px 16px;
 
         & div {
-            display: inline-block;
+            display: flex;
+            gap: 16px;
 
             & span {
+                width: 100px;
+                overflow: hidden;
+                text-wrap: nowrap;
+                text-overflow: ellipsis;
 
                 & input {
                     height: 32px;
                     width: 32px;
+                }
+
+                & a {
+                    color: blue;
+                    text-decoration: none;
+                }
+
+                & a:visited {
+                    color: purple;
+                }
+
+                & button {
+                    font-size: 24px;
                 }
             }
         }

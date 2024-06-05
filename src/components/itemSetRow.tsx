@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { SetRowInterface } from "../interfaces/setRowInterface";
 
 import style from "./itemSetRow.module.css";
+import buttonStyle from "../styles/button.module.css";
 
 export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
 
@@ -48,7 +49,8 @@ export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
             <div>
                 <span> <input type="checkbox"/> </span>
                 <span> <img src={modApiSet.img} alt={itemUrl}/> </span>
-                <span> {`${itemUrl} ${modApiSet.quantity}`} </span>
+                <span> {itemUrl} </span>
+                <span> {modApiSet.quantity} </span>
                 <span> {modApiSet.orderCreator} </span>
                 <span> {`${modApiSet.modRankCurrent}/${modApiSet.modRankMax}`} </span>
             </div>
@@ -56,7 +58,7 @@ export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
                 <span> {`${modApiSet.onlineValue} (${modApiSet.maxValue})`} </span>
                 <span> <img src="platicon" alt="currencySymbol"/> </span>
                 <span> <a href={"https://warframe.market/items/" + itemUrl}>Link to market</a> </span>
-                <span> <button> Clipboard Info</button> </span>
+                <span> <button className={buttonStyle.small}> Clipboard Info</button> </span>
             </div>
         </p> : <p>noDataFound</p>}
     </article>
