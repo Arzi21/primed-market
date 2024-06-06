@@ -1,0 +1,11 @@
+/*
+
+/*
+
+*/
+
+.tableRow {
+    width: 100%;
+    background-color: var(--bg-secondary);
+    padding: 0 16px;
+}

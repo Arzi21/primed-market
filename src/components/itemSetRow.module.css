@@ -5,63 +5,40 @@
 */
 
 .row {
-    background-color: var(--bg-secondary);
+
     color: var(--font-dark);
-    display: block;
     line-height: 64px;
     
     font-size: var(--prg_lg);
+    overflow:hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
 
-    & p {
-        display: flex;
-        justify-content: space-between;
-        padding: 0px 16px;
-
-        & div {
-            display: flex;
-            gap: 16px;
-
-            & span:nth-of-type(1) {
-                width: auto;
-            }
-
-            & span:nth-of-type(3), span:nth-of-type(5) {
-                width: 200px;
-            }
-
-            & span:nth-of-type(4), span:nth-of-type(6) {
-                width: 50px;
-            }
-
-            & span {
-                overflow: hidden;
-                text-wrap: nowrap;
-                text-overflow: ellipsis;
+    & td {
+        & * {
+            overflow: hidden;
+            text-wrap: nowrap;
+            text-overflow: ellipsis;
+        }
 
 
-                & input {
-                    height: 32px;
-                    width: 32px;
-                }
+        & input {
+            height: 32px;
+            width: 32px;
+        }
 
-                & img {
-                    height: 32px;
-                    max-width: 32px;
-                }
+        & a {
+            color: blue;
+            text-decoration: none;
+        }
 
-                & a {
-                    color: blue;
-                    text-decoration: none;
-                }
+        & a:visited {
+            color: purple;
+        }
 
-                & a:visited {
-                    color: purple;
-                }
-
-                & button {
-                    font-size: 24px;
-                }
-            }
+        & button {
+            font-size: 24px;
         }
     }
+    
 }

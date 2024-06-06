@@ -44,22 +44,21 @@ export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
     console.log(modApiSet);
 
 
-    return <article className={style.row}>
-        { modApiSet ? <p> 
-            <div>
-                <span> <input type="checkbox"/> </span>
-                <span> <img src={modApiSet.img} alt={itemUrl}/> </span>
-                <span> {itemUrl} </span>
-                <span> {modApiSet.quantity} </span>
-                <span> {modApiSet.orderCreator} </span>
-                <span> {`${modApiSet.modRankCurrent}/${modApiSet.modRankMax}`} </span>
-            </div>
-            <div>
-                <span> {`${modApiSet.onlineValue} (${modApiSet.maxValue})`} </span>
-                <span> <img src="platicon" alt="currencySymbol"/> </span>
-                <span> <a href={"https://warframe.market/items/" + itemUrl}>Link to market</a> </span>
-                <span> <button className={buttonStyle.small}> Clipboard Info</button> </span>
-            </div>
-        </p> : <p>noDataFound</p>}
-    </article>
+    return <tr className={style.row}>
+        { modApiSet ? 
+            <>
+                <td> <input type="checkbox"/> </td>
+                <td> <img src={modApiSet.img} alt={itemUrl}/> </td>
+                <td> {itemUrl} </td>
+                <td> {modApiSet.quantity} </td>
+                <td> {modApiSet.orderCreator} </td>
+                <td> {`${modApiSet.modRankCurrent}/${modApiSet.modRankMax}`} </td>
+
+                <td> {`${modApiSet.onlineValue} (${modApiSet.maxValue})`} </td>
+                <td> <img src="platicon" alt="currencySymbol"/> </td>
+                <td> <a href={"https://warframe.market/items/" + itemUrl}>Link to market</a> </td>
+                <td> <button className={buttonStyle.small}> Clipboard Info</button> </td>
+            </>
+        : <p>noDataFound</p>}
+    </tr>
 }

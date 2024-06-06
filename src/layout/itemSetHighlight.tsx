@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { ItemSetRow } from "../components/itemSetRow";
 import { ReadModListSet } from "../helpers/localStorageCalls";
 import { ItemSetInterface } from "../interfaces/itemSetInterface";
-
+import styles from "./itemSetHighlight.module.css";
 
 export const ItemSetHighlight = () => {
 
@@ -17,5 +17,5 @@ export const ItemSetHighlight = () => {
         <ItemSetRow key={modSetName + "_" + index + 1} itemUrl={setItemUrlName}/>
     ));
 
-    return <section> {template} </section>
+    return <table className={styles.tableRow}> {template} </table>
 }
