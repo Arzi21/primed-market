@@ -19,7 +19,7 @@ export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
         .catch(err => console.log(err))
     }, []);
     
-    
+
 
     return <>
         { modApiSet ? 
@@ -38,6 +38,11 @@ export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
                 <td> <a href={"https://warframe.market/items/" + itemUrl}>Link to market</a> </td>
                 <td> <button className={buttonStyle.small}> Clipboard Info</button> </td>
             </tr>
-        : <p>noDataFound</p>}
+        : 
+            <tr className={style.row}> 
+                <td> <input type="checkbox"/> </td>
+                <td> <p>{itemUrl} could not be fetched</p> </td>
+            </tr>
+        }
     </>
 }
