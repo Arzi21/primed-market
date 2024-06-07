@@ -30,7 +30,7 @@ export const ItemSetHighlight = () => {
     return (
         <section>
             <InteractionBar barTitle={modSetName!} dropdownActions={[()=>[alert("test")]]} dropdownLabels={["test"]}/>
-            <table className={styles.tableRow}> {tableRows} </table>
+            <table className={styles.tableRow}> <tbody>{tableRows}</tbody> </table>
         </section>
     );
 }
