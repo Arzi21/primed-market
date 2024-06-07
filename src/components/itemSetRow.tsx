@@ -4,7 +4,8 @@ import { SetRowInterface } from "../interfaces/setRowInterface";
 import style from "./itemSetRow.module.css";
 import buttonStyle from "../styles/button.module.css";
 
-export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
+export const ItemSetRow = ({itemUrl, isSelectable, showButton}:
+    {itemUrl:string, isSelectable:boolean, showButton:boolean}) => {
 
     const [modApiSet, setModApiSet] = useState<SetRowInterface|null>();
 
@@ -21,28 +22,27 @@ export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
     
 
 
-    return <>
-        { modApiSet ? 
-            <tr className={style.row}>
-                <td> <input type="checkbox"/> </td>
+    return (
+        <tr className={style.row}>
+            {isSelectable && <td> <input type="checkbox"/> </td>}
+            { modApiSet ? <>
                 <td> <img className={style.platIcon} src={modApiSet.img} alt={itemUrl}/> </td>
                 <td> <p>{itemUrl}</p> </td>
                 <td> <p>{modApiSet.quantity}</p> </td>
                 <td> <p>{modApiSet.orderCreator}</p> </td>
                 <td> <p>{`${modApiSet.modRankCurrent}/${modApiSet.modRankMax}`}</p> </td>
-
+    
                 <td className={style.emptyfield}></td>
-
+    
                 <td> {`${modApiSet.onlineValue} (${modApiSet.maxValue})`} </td>
                 <td> <img className={style.platIcon} src="platicon" alt="currencySymbol"/> </td>
                 <td> <a href={"https://warframe.market/items/" + itemUrl}>Link to market</a> </td>
-                <td> <button className={buttonStyle.small}> Clipboard Info</button> </td>
-            </tr>
-        : 
-            <tr className={style.row}> 
-                <td> <input type="checkbox"/> </td>
+            </>: <>
                 <td> <p>{itemUrl} could not be fetched</p> </td>
-            </tr>
-        }
-    </>
+            </>}
+            {showButton && <td> <button className={buttonStyle.small}>Clipboard Info</button> </td>}
+        </tr>
+    )
+
+
 }

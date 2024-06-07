@@ -4,8 +4,12 @@ import { ItemSetRow } from "../components/itemSetRow";
 import { ReadModListSet } from "../helpers/localStorageCalls";
 import { ItemSetInterface } from "../interfaces/itemSetInterface";
 import styles from "./itemSetHighlight.module.css";
+import { useState } from "react";
 
 export const ItemSetHighlight = () => {
+
+    const [isSelectable, setIsSelectable] = useState<boolean>(false);
+    const [showButton, setShowButton] = useState<boolean>(false);
 
     const urlParams = useParams();
     const modSetName = urlParams.setName;
@@ -13,9 +17,18 @@ export const ItemSetHighlight = () => {
 
 
 
-    let template = modSet.setItemUrls.map((setItemUrlName:string, index:number) => (
-        <ItemSetRow key={modSetName + "_" + index + 1} itemUrl={setItemUrlName}/>
+    let tableRows = modSet.setItemUrls.map((setItemUrlName:string, index:number) => (
+        <ItemSetRow 
+            key={modSetName + "_" + index + 1} 
+            itemUrl={setItemUrlName} 
+            isSelectable={isSelectable}
+            showButton={showButton}
+        />
     ));
 
-    return <table className={styles.tableRow}> {template} </table>
+    return (
+        <section>
+            <table className={styles.tableRow}> {tableRows} </table>
+        </section>
+    );
 }

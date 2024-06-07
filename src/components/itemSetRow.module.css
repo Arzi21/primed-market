@@ -12,13 +12,12 @@
     text-wrap: nowrap;
     background-color: var(--bg-secondary);
 
-    & td:first-of-type {
-        padding: 0 0 0 var(--outer_wrapper_margin);
-
-    }
-
     & td:last-of-type {
         padding: 0 var(--outer_wrapper_margin) 0 0;
+    }
+
+    & td:first-of-type {
+        padding: 0 0 0 var(--outer_wrapper_margin);
     }
 
     & td {
