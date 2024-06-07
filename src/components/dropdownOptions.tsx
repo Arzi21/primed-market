@@ -6,6 +6,10 @@ export const DropdownOptions = ({dropdownActions, dropdownLabels}:{dropdownActio
     // might want to expand this to include other inputs; like checkboxes.
 
     const [displayDropdown, setDisplayDropdown] = useState(false);
+
+    if (dropdownActions.length !== dropdownLabels.length) {
+        console.warn("Dropdown Options is being called with an uneven number of actions and labels");
+    }
     
     return( 
         <div className={style.interactionBar}>
