@@ -9,9 +9,7 @@
     line-height: 96px;
     
     font-size: var(--prg_lg);
-    overflow:hidden;
     text-wrap: nowrap;
-    text-overflow: ellipsis;
     background-color: var(--bg-secondary);
 
     & td:first-of-type {
@@ -26,9 +24,6 @@
     & td {
 
         & * {
-            overflow: hidden;
-            text-wrap: nowrap;
-            text-overflow: ellipsis;
             display: flex;
             align-items: center;
         }
@@ -58,14 +53,12 @@
 
 .itemImg {
     height: 64px;
-    width: 64px;
     display: flex;
     justify-content: center;
 }
 
 .platIcon {
     height: 48px;
-    /* width: 32px; */
 }
 
 .emptyfield {
