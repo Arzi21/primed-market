@@ -37,10 +37,10 @@ export const ItemSetRow = ({itemUrl, isSelectable, showButton}:
                 <td> {`${modApiSet.onlineValue} (${modApiSet.maxValue})`} </td>
                 <td> <img className={style.platIcon} src="platicon" alt="currencySymbol"/> </td>
                 <td> <a href={"https://warframe.market/items/" + itemUrl}>Link to market</a> </td>
+                {showButton && <td> <button className={buttonStyle.small}>Clipboard Info</button> </td>}
             </>: <>
                 <td> <p>{itemUrl} could not be fetched</p> </td>
             </>}
-            {showButton && <td> <button className={buttonStyle.small}>Clipboard Info</button> </td>}
         </tr>
     )
 
