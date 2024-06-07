@@ -5,6 +5,7 @@ import { ReadModListSet } from "../helpers/localStorageCalls";
 import { ItemSetInterface } from "../interfaces/itemSetInterface";
 import styles from "./itemSetHighlight.module.css";
 import { useState } from "react";
+import { InteractionBar } from "./interactionBar";
 
 export const ItemSetHighlight = () => {
 
@@ -28,6 +29,7 @@ export const ItemSetHighlight = () => {
 
     return (
         <section>
+            <InteractionBar barTitle={modSetName!} dropdownActions={[]} dropdownLabels={[]}/>
             <table className={styles.tableRow}> {tableRows} </table>
         </section>
     );
