@@ -24,7 +24,7 @@ export const ItemSetRow = ({itemUrl, isSelectable, showButton}:
 
     return (
         <tr className={style.row}>
-            {isSelectable && <td> <input type="checkbox"/> </td>}
+            {isSelectable && <td> <label><input type="checkbox"/></label> </td>}
             { modApiSet ? <>
                 <td> <img className={style.platIcon} src={modApiSet.img} alt={itemUrl}/> </td>
                 <td> <p>{itemUrl}</p> </td>
