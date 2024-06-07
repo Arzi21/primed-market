@@ -16,6 +16,8 @@ export const ItemSetHighlight = () => {
     const modSetName = urlParams.setName;
     const modSet:ItemSetInterface = ReadModListSet(modSetName!);
 
+    const dropdownActionArray = [() => setIsSelectable(!isSelectable)];
+    const dropdownLabelArray = ["select"];
 
 
     let tableRows = modSet.setItemUrls.map((setItemUrlName:string, index:number) => (
@@ -29,7 +31,7 @@ export const ItemSetHighlight = () => {
 
     return (
         <section>
-            <InteractionBar barTitle={modSetName!} dropdownActions={[()=>[alert("test")]]} dropdownLabels={["test"]}/>
+            <InteractionBar barTitle={modSetName!} dropdownActions={dropdownActionArray} dropdownLabels={dropdownLabelArray}/>
             <table className={styles.tableRow}> <tbody>{tableRows}</tbody> </table>
         </section>
     );
