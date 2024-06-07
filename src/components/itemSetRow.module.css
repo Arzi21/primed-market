@@ -5,22 +5,33 @@
 */
 
 .row {
-
     color: var(--font-dark);
-    line-height: 64px;
+    line-height: 96px;
     
     font-size: var(--prg_lg);
     overflow:hidden;
     text-wrap: nowrap;
     text-overflow: ellipsis;
+    background-color: var(--bg-secondary);
+
+    & td:first-of-type {
+        padding: 0 0 0 var(--outer_wrapper_margin);
+
+    }
+
+    & td:last-of-type {
+        padding: 0 var(--outer_wrapper_margin) 0 0;
+    }
 
     & td {
+
         & * {
             overflow: hidden;
             text-wrap: nowrap;
             text-overflow: ellipsis;
+            display: flex;
+            align-items: center;
         }
-
 
         & input {
             height: 32px;
@@ -28,6 +39,7 @@
         }
 
         & a {
+            font-size: var(--prg_sm);
             color: blue;
             text-decoration: none;
         }
@@ -41,4 +53,21 @@
         }
     }
     
+}
+
+
+.itemImg {
+    height: 64px;
+    width: 64px;
+    display: flex;
+    justify-content: center;
+}
+
+.platIcon {
+    height: 48px;
+    /* width: 32px; */
+}
+
+.emptyfield {
+    width: 20%;
 }

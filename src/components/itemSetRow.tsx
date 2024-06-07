@@ -3,6 +3,7 @@ import { SetRowInterface } from "../interfaces/setRowInterface";
 
 import style from "./itemSetRow.module.css";
 import buttonStyle from "../styles/button.module.css";
+import image from "../imgs/heroimg1.png";
 
 export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
 
@@ -44,21 +45,23 @@ export const ItemSetRow = ({itemUrl}:{itemUrl:string}) => {
     console.log(modApiSet);
 
 
-    return <tr className={style.row}>
+    return <>
         { modApiSet ? 
-            <>
+            <tr className={style.row}>
                 <td> <input type="checkbox"/> </td>
-                <td> <img src={modApiSet.img} alt={itemUrl}/> </td>
-                <td> {itemUrl} </td>
-                <td> {modApiSet.quantity} </td>
-                <td> {modApiSet.orderCreator} </td>
-                <td> {`${modApiSet.modRankCurrent}/${modApiSet.modRankMax}`} </td>
+                <td> <img className={style.platIcon} src={modApiSet.img} alt={itemUrl}/> </td>
+                <td> <p>{itemUrl}</p> </td>
+                <td> <p>{modApiSet.quantity}</p> </td>
+                <td> <p>{modApiSet.orderCreator}</p> </td>
+                <td> <p>{`${modApiSet.modRankCurrent}/${modApiSet.modRankMax}`}</p> </td>
+
+                <td className={style.emptyfield}></td>
 
                 <td> {`${modApiSet.onlineValue} (${modApiSet.maxValue})`} </td>
-                <td> <img src="platicon" alt="currencySymbol"/> </td>
+                <td> <img className={style.platIcon} src="platicon" alt="currencySymbol"/> </td>
                 <td> <a href={"https://warframe.market/items/" + itemUrl}>Link to market</a> </td>
                 <td> <button className={buttonStyle.small}> Clipboard Info</button> </td>
-            </>
+            </tr>
         : <p>noDataFound</p>}
-    </tr>
+    </>
 }
