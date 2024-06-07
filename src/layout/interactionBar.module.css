@@ -1,0 +1,22 @@
+/*
+
+/*
+
+*/
+
+
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: var(--font-dark);
+
+    padding: var(--outer_wrapper_margin);
+    font-size: var(--title_lg);
+
+    & h2 {
+        font-weight: 400;
+    }
+}

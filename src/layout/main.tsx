@@ -8,6 +8,7 @@ import { ItemSetCard } from "../components/itemSetCard";
 import { HeroImage } from "../components/heroImage";
 import image from "../imgs/heroimg1.png";
 import styles from "./main.module.css";
+import { InteractionBar } from "./interactionBar";
 
 export const Main = () => {
 
@@ -35,10 +36,7 @@ export const Main = () => {
         <>
         <HeroImage imagePath={image}/>
         <section className={styles.main}>
-            <div className={styles.sectionHeader}>
-                <h2>Item Sets</h2> 
-                <DropdownOptions dropdownActions= {dropdownActions} dropdownLabels={dropdownLabels}/>
-            </div>
+            <InteractionBar barTitle="Item Sets" dropdownActions= {dropdownActions} dropdownLabels={dropdownLabels}/>
             <article className={styles.modListGrid}>
                 {itemSet ? itemSet.map((itemSetValues:ItemSetInterface, index:number) => (
                     <ItemSetCard itemSet={itemSetValues} displayDelete={isDeletable} deleteFunc={filterModList} key={index + itemSetValues.setNameUrl}/>

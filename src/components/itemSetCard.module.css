@@ -19,6 +19,7 @@ h3 {
 }
 
 .cardLink {
+    font-size: var(--title_lg);
 
     & > p:first-of-type {
         text-align: right;

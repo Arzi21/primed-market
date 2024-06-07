@@ -19,6 +19,20 @@ export function ReadLocalStorageSection(key:string):ItemSetInterface[]|any {
     }
 }
 
+export function ReadModListSet(setName:string) {
+    const fullModList = ReadLocalStorageSection("itemSet");
+    const filteredModList = fullModList.filter(
+        (modlist:ItemSetInterface) => modlist.setNameUrl === setName
+    );
+    return filteredModList[0];
+    //note: we're unarraying this array, assuming that we only get one value back
+}
+
+export function overrideLocalstorageModList(newPackage:ItemSetInterface[]):void {
+    const updatePackage = JSON.stringify({data: newPackage});
+    localStorage.setItem("itemSet", updatePackage);
+}
+
 export function DeleteFromModList(modCard:ItemSetInterface):void {
     const dirtyLocalstorage = ReadLocalStorageSection("itemSet");
     let cleanLocalstorage = dirtyLocalstorage.filter((obj:ItemSetInterface) => obj.setName !== modCard.setName);
@@ -46,11 +60,6 @@ export function InitialiseTestValue():ItemSetInterface[] {
     
     overrideLocalstorageModList([exampleSet]);
     return [exampleSet];
-}
-
-export function overrideLocalstorageModList(newPackage:ItemSetInterface[]):void {
-    const updatePackage = JSON.stringify({data: newPackage});
-    localStorage.setItem("itemSet", updatePackage);
 }
 
 
