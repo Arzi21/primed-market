@@ -62,6 +62,7 @@
 
 .platIcon {
     height: 48px;
+    font-size: 0;
 }
 
 .emptyfield {
