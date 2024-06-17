@@ -16,9 +16,12 @@
     /* height: 100%;
     width: 100%; */
 
+    padding: var(--outer_wrapper_margin);
+
     border-width: 0px;
     border-radius: 8px;
     box-shadow: var(--shadow);
 
     background-color: var(--bg-secondary);
+    z-index: 1;
 }
