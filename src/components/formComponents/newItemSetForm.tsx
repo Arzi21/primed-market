@@ -89,6 +89,8 @@ export const NewItemSetForm = () => {
                     />
                 ))}
             </label>
+            
+            <button type="button" onClick={()=>addInputField()}> + </button>
 
             <label>
                 Description
@@ -99,8 +101,6 @@ export const NewItemSetForm = () => {
                     placeholder="test"
                 />
             </label>
-            
-            <button type="button" onClick={()=>addInputField()}> Add Slot </button>
             <button type="submit"> Save Set </button>
         </form>
     )
