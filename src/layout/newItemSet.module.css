@@ -4,29 +4,6 @@
 
 */
 
-.outerWrapper {
-    margin: var(--outer_wrapper_margin);
-
-    --interactable_spacing: 8px;
-}
-
-.outerWrapper label, .outerWrapper input, .outerWrapper button, .outerWrapper textarea {
-    display: block;
-    margin: var(--interactable_spacing) 0;
-
-}
-
-.outerWrapper h2 {
+.header h2 {
     font-size: var(--title_md);
-}
-
-.outerWrapper label {
-    color: var(--font-dark);
-    font-size: var(--prg_lg);
-    margin: 16px 0px;
-}
-
-.outerWrapper input, .outerWrapper textarea {
-    font-size: var(--prg_sm);
-    font-family: var(--font-family);
 }
