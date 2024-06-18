@@ -1,7 +1,3 @@
-import { useState } from "react";
-import { UpdateLocalStorage } from "../helpers/localStorageCalls";
-import { ItemSetInterface } from "../interfaces/itemSetInterface";
-
 import styles from "./modal.module.css";
 import { NewItemSetForm } from "./formComponents/newItemSetForm";
 
